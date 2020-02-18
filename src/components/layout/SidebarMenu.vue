@@ -7,7 +7,7 @@
         <span class="page">Dashboard</span>
       </a>
     </router-link>
-    <router-link tag="li" class="pageLink" to="/tables">
+    <router-link tag="li" class="pageLink" to="/jexcel">
       <a>
         <i class="fa fa-table"></i>
         <span class="page">Tables</span>

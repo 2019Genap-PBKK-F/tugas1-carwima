@@ -1,58 +1,56 @@
 <template>
   <div>
-    <div id="Jexcel" ref="spreadsheet"></div>
+    <div id='Jexcel' ref='spreadsheet'></div>
+    <br>
     <div>
-      <input type="button" value="Add new row" @click="() => spreadsheet.insertRow()" />
+      <h1>DAFTAR MAHASISWA</h1>
+    </div>
+    <div>
+      <input type='button' value='Add new row' @click='addRow(spreadsheet)' />
+    </div>
+    <div>
+    This will be the changed message : {{test}}
     </div>
   </div>
 </template>
 
 <script>
-import jexcel from "jexcel";
-import "jexcel/dist/jexcel.css";
-import Axios from 'axios';
+
+import jexcel from 'jexcel'
+import 'jexcel/dist/jexcel.css'
+import Axios from 'axios'
 
 var data = [
-  ["Jazz", "Honda", "2019-02-12", "", true, "$ 2.000,00", "#777700"],
-  ["Civic", "Honda", "2018-07-11", "", true, "$ 4.000,01", "#007777"]
-];
+  ['17-098', 'Carlo', '2017', '1999-02-12', '', true],
+  ['17-098', 'Carlo Win', '2017', '1999-07-11', '', true]
+]
 
 var options = {
   data: data,
   allowToolbar: true,
   columns: [
-    { type: "text", title: "Car", width: "120px" },
-    {
-      type: "dropdown",
-      title: "Make",
-      width: "250px",
-      source: ["Alfa Romeo", "Audi", "Bmw"]
-    },
-    { type: "calendar", title: "Available", width: "250px" },
-    { type: "image", title: "Photo", width: "120px" },
-    { type: "checkbox", title: "Stock", width: "80px" },
-    {
-      type: "numeric",
-      title: "Price",
-      width: "100px",
-      mask: "$ #.##,00",
-      decimal: ","
-    },
-    { type: "color", width: "100px", render: "square" }
+    { type: 'text', title: 'NRP', width: '120px' },
+    { type: 'text', title: 'Nama', width: '120px' },
+    { type: 'text', title: 'Angkatan', width: '120px' },
+    { type: 'calendar', title: 'Tgl Lahir', width: '250px' },
+    { type: 'image', title: 'Photo', width: '120px' },
+    { type: 'checkbox', title: 'Aktif', width: '80px' }
   ]
-};
+}
 
 export default {
-  name: "Jexcel",
+  name: 'Jexcel',
   mounted: function() {
-    let spreadsheet = jexcel(this.$el, options);
-    Object.assign(this, { spreadsheet });
+    let spreadsheet = jexcel(this.$el, options)
+    Object.assign(this, { spreadsheet })
   },
   methods: {
-    updateonline: function()
-    {
+    updateonline: function() {
       Axios.post
+    },
+    addRow: function(ss) {
+      ss.insertRow()
     }
   }
-};
+}
 </script>
