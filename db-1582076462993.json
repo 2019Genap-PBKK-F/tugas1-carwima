@@ -1,5 +1,5 @@
 {
-  "datamahasiswa": [
+  "mahasiswa": [
     {
       "id": 1,
       "nrp": "51-098",
@@ -14,7 +14,7 @@
       "nrp": "51-080",
       "nama": "Carlo-New",
       "angkatan": "2019",
-      "tgllahir": "1999-06-05", 
+      "tgllahir": "1999-06-05",
       "aktif": true
     },
     {

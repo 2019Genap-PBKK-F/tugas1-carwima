@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <h1>DAFTAR MAHASISWA</h1>
+    </div>
     <div id="spreadsheet">
       <input type="button" value="Add new row" @click="() => spreadsheet.insertRow()" />
       <input type="button" value="Delete row" @click="() => spreadsheet.deleteRow()" />
@@ -7,15 +10,12 @@
   </div>
 </template>
 
-
-
 <script>
-
 import jexcel from 'jexcel'
 import 'jexcel/dist/jexcel.css'
 import axios from 'axios'
 
-var changed = function(instance, cell, x, y, value) {
+var updatecell = function(instance, cell, x, y, value) {
   x = parseInt(x)
   y = parseInt(y)
   var datatemp = []
@@ -89,7 +89,7 @@ var deleterow = function(instance, id) {
 
 var options = {
   url: 'http://localhost:3000/datamahasiswa',
-  onchange: changed,
+  onchange: updatecell,
   oninsertrow: insertrow,
   ondeleterow: deleterow,
   allowToolbar: true,
