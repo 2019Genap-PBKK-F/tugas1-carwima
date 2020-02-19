@@ -1,0 +1,29 @@
+{
+  "mahasiswa": [
+    {
+      "id": 1,
+      "nrp": "51-098",
+      "nama": "Carlo",
+      "angkatan": "2017",
+      "tgllahir": "1999-06-05",
+      "photo": "",
+      "aktif": true
+    },
+    {
+      "id": 2,
+      "nrp": "51-080",
+      "nama": "Carlo-New",
+      "angkatan": "2019",
+      "tgllahir": "1999-06-05", 
+      "aktif": true
+    },
+    {
+      "id": 3,
+      "nrp": "51",
+      "nama": "ini Test Data",
+      "angkatan": "test",
+      "tgllahir": "1996-06-06 00:00:00",
+      "aktif": true
+    }
+  ]
+}
